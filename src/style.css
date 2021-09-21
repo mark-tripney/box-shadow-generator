@@ -1,0 +1,57 @@
+/****************************************
+Base styles
+****************************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  border: 1px dashed red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/****************************************
+Base typography
+****************************************/
+
+p,
+label {
+  font-family: 'Bitter', serif;
+  font-size: 1.1em;
+}
+
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3em;
+}
+
+/****************************************
+Form
+****************************************/
+
+.form--base {
+  width: 100%;
+  display: flex;
+}
+
+.form--slider {
+  display: flex;
+  align-items: center;
+}
+
+.form--slider input {
+  margin-left: 1em;
+  flex: 1;
+}

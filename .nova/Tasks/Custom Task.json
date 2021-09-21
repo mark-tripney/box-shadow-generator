@@ -1,0 +1,10 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "npm run start"
+    }
+  },
+  "identifier" : "8B06E9AF-7968-48C1-9B54-5565FA251F75",
+  "persistent" : true
+}
