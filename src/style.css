@@ -16,7 +16,6 @@ html {
 .container {
   max-width: 680px;
   margin: 0 auto;
-  border: 1px dashed red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,14 +43,34 @@ Form
 .form--base {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .form--slider {
   display: flex;
   align-items: center;
+  margin-bottom: 0.25rem;
 }
 
 .form--slider input {
-  margin-left: 1em;
   flex: 1;
+}
+
+.label--margin-l {
+  margin-left: 1em;
+}
+
+.label--margin-r {
+  margin-right: 1em;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2em;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  border-radius: 10px;
 }
