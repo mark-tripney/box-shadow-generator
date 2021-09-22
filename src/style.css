@@ -5,6 +5,8 @@ Base styles
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -13,12 +15,21 @@ html {
   font-family: sans-serif;
 }
 
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   max-width: 680px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 /****************************************
@@ -33,7 +44,9 @@ label {
 
 h1 {
   font-family: 'Work Sans', sans-serif;
-  font-size: 3em;
+  font-size: 2em;
+  text-align: center;
+  margin: 1rem 0 5rem;
 }
 
 /****************************************
@@ -41,36 +54,52 @@ Form
 ****************************************/
 
 .form--base {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2rem;
+  width: 90%;
+  max-width: 500px;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: auto 2fr;
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 1em;
+  row-gap: 0.5rem;
 }
 
-.form--slider {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.25rem;
-}
-
-.form--slider input {
-  flex: 1;
-}
-
-.label--margin-l {
-  margin-left: 1em;
-}
-
-.label--margin-r {
-  margin-right: 1em;
+label {
+  justify-self: end;
+  align-self: center;
 }
 
 code {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.2em;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 1rem;
+  font-size: 1.1em;
   background-color: #f0f0f0;
   border-radius: 10px;
+}
+
+/****************************************
+Footer
+****************************************/
+
+footer p {
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+/****************************************
+Media queries
+****************************************/
+
+@media screen and (max-width: 410px) {
+  code {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  h1 {
+    font-size: 3em;
+  }
 }
