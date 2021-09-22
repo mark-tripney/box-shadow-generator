@@ -1,14 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Rectangle(props) {
-  const DemoShape = styled.div`
-    width: 70%;
-    height: 200px;
-    border: 1px solid #000;
-    box-shadow: ${props.offsetX}px ${props.offsetY}px ${props.blurRadius}px
-      ${props.spreadRadius}px teal;
-  `;
+const RectangleStyled = styled.div`
+  width: 70%;
+  height: 200px;
+  border: 1px solid #000;
+  box-shadow: ${props => props.offsetX}px ${props => props.offsetY}px
+    ${props => props.blurRadius}px ${props => props.spreadRadius}px teal;
+`;
 
-  return <DemoShape />;
+export default function Rectangle({ ...props }) {
+  return (
+    <RectangleStyled
+      offsetX={props.offsetX}
+      offsetY={props.offsetY}
+      blurRadius={props.blurRadius}
+      spreadRadius={props.spreadRadius}
+    />
+  );
 }
