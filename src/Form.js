@@ -3,23 +3,23 @@ import React from 'react';
 export default function Form(props) {
   return (
     <form className="form--base">
-      <p>Type</p>
+      <p>Shadow</p>
       <div className="radio-group">
         <div>
           <input
             type="radio"
-            name="shadow-type"
+            name="shadowType"
             id="drop"
             value="drop"
             checked={props.shadowType === 'drop'}
             onChange={props.onChangeShadowType}
           />
-          <label htmlFor="drop">Drop Shadow</label>
+          <label htmlFor="drop">Drop</label>
         </div>
         <div>
           <input
             type="radio"
-            name="shadow-type"
+            name="shadowType"
             id="inset"
             value="inset"
             checked={props.shadowType === 'inset'}
@@ -42,7 +42,7 @@ export default function Form(props) {
       <label htmlFor="offset-y">Vertical</label>
       <input
         type="range"
-        name="offset-y"
+        name="offsetY"
         id="offset-y"
         min={-50}
         max={50}
@@ -52,7 +52,7 @@ export default function Form(props) {
       <label htmlFor="blur-radius">Blur</label>
       <input
         type="range"
-        name="blur-radius"
+        name="blurRadius"
         id="blur-radius"
         min={0}
         max={50}
@@ -62,7 +62,7 @@ export default function Form(props) {
       <label htmlFor="spread-radius">Spread</label>
       <input
         type="range"
-        name="spread-radius"
+        name="spreadRadius"
         id="spread-radius"
         min={-50}
         max={50}
@@ -72,7 +72,7 @@ export default function Form(props) {
       <label htmlFor="spread-radius">Colour</label>
       <input
         type="color"
-        name="shadow-colour"
+        name="colour"
         id="shadow-colour"
         minLength={4}
         maxLength={7}

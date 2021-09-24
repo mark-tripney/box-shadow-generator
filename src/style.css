@@ -81,11 +81,21 @@ code {
 
 .radio-group {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .radio-group label {
   margin-left: 0.25rem;
+}
+
+/****************************************
+Rectangle
+****************************************/
+
+.rectangle--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /****************************************

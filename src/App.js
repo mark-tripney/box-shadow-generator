@@ -8,41 +8,29 @@ import '@fontsource/bitter/400.css';
 import '@fontsource/roboto-mono/400.css';
 import './style.css';
 
+const initialState = {
+  offsetX: 0,
+  offsetY: 0,
+  blurRadius: 0,
+  spreadRadius: 0,
+  shadowType: 'drop',
+  colour: '#000',
+};
+
 export default function App() {
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-  const [blurRadius, setBlurRadius] = useState(0);
-  const [spreadRadius, setSpreadRadius] = useState(0);
-  const [shadowType, setShadowType] = useState('drop');
-  const [colour, setColour] = useState('#000');
+  const [
+    { offsetX, offsetY, blurRadius, spreadRadius, shadowType, colour },
+    setState,
+  ] = useState(initialState);
 
-  function handleChangeShadowType(e) {
-    setShadowType(e.target.value);
+  function resetState() {
+    setState({ ...initialState });
   }
 
-  function handleChangeOffsetX(e) {
-    setOffsetX(e.target.value);
-  }
-
-  function handleChangeOffsetY(e) {
-    setOffsetY(e.target.value);
-  }
-
-  function handleChangeBlurRadius(e) {
-    setBlurRadius(e.target.value);
-  }
-
-  function handleChangeSpreadRadius(e) {
-    setSpreadRadius(e.target.value);
-  }
-
-  function handleDoubleClick(e) {
-    console.log(e.target.name);
-  }
-
-  function handleChangeColour(e) {
-    setColour(e.target.value);
-  }
+  const onChange = e => {
+    const { name, value } = e.target;
+    setState(prevState => ({ ...prevState, [name]: value }));
+  };
 
   return (
     <>
@@ -57,21 +45,21 @@ export default function App() {
               shadowType === 'inset' ? 'inset' : ''
             } ${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colour}`,
           }}
+          handleClick={resetState}
         />
         <Form
           shadowType={shadowType}
-          onChangeShadowType={handleChangeShadowType}
+          onChangeShadowType={onChange}
           offsetX={offsetX}
-          onChangeOffsetX={handleChangeOffsetX}
+          onChangeOffsetX={onChange}
           offsetY={offsetY}
-          onChangeOffsetY={handleChangeOffsetY}
+          onChangeOffsetY={onChange}
           blurRadius={blurRadius}
-          onChangeBlurRadius={handleChangeBlurRadius}
+          onChangeBlurRadius={onChange}
           spreadRadius={spreadRadius}
-          onChangeSpreadRadius={handleChangeSpreadRadius}
-          onDoubleClickInput={handleDoubleClick}
+          onChangeSpreadRadius={onChange}
           colour={colour}
-          onChangeColour={handleChangeColour}
+          onChangeColour={onChange}
         />
         <CSSCode
           shadowType={shadowType}
