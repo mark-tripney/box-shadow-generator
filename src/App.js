@@ -13,8 +13,12 @@ export default function App() {
   const [offsetY, setOffsetY] = useState(0);
   const [blurRadius, setBlurRadius] = useState(0);
   const [spreadRadius, setSpreadRadius] = useState(0);
-  const [inset, setInset] = useState(false);
+  const [shadowType, setShadowType] = useState('drop');
   const [colour, setColour] = useState('#000');
+
+  function handleChangeShadowType(e) {
+    setShadowType(e.target.value);
+  }
 
   function handleChangeOffsetX(e) {
     setOffsetX(e.target.value);
@@ -49,10 +53,14 @@ export default function App() {
             width: '60%',
             minHeight: '200px',
             border: '1px solid #000',
-            boxShadow: `${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colour}`,
+            boxShadow: `${
+              shadowType === 'inset' ? 'inset' : ''
+            } ${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colour}`,
           }}
         />
         <Form
+          shadowType={shadowType}
+          onChangeShadowType={handleChangeShadowType}
           offsetX={offsetX}
           onChangeOffsetX={handleChangeOffsetX}
           offsetY={offsetY}
@@ -66,6 +74,7 @@ export default function App() {
           onChangeColour={handleChangeColour}
         />
         <CSSCode
+          shadowType={shadowType}
           offsetX={offsetX}
           offsetY={offsetY}
           blurRadius={blurRadius}
