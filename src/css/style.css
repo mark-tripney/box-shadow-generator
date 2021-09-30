@@ -131,11 +131,14 @@ footer p {
 Media queries
 ****************************************/
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 580px) {
   h1 {
     font-size: 3em;
   }
   code {
     font-size: 1em;
+  }
+  footer p {
+    font-size: 0.9em;
   }
 }
