@@ -13,6 +13,7 @@ export default function CSSCode(props) {
           className="clipboard-img"
           alt="A clipboard"
           role="button"
+          onClick={props.onClipboardClick}
         />
       </code>
     </>

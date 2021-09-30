@@ -32,14 +32,19 @@ export default function App() {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
 
+  function handleClipboardClick() {
+    console.log('Copied!');
+  }
+
   return (
     <>
+      <h1>Box Shadow Generator</h1>
       <div className="container">
-        <h1>Box Shadow Generator</h1>
         <Rectangle
           style={{
-            width: '60%',
-            minHeight: '200px',
+            width: '50%',
+            maxWidth: '500px',
+            minHeight: '150px',
             border: '1px solid #000',
             boxShadow: `${
               shadowType === 'inset' ? 'inset' : ''
@@ -68,6 +73,7 @@ export default function App() {
           blurRadius={blurRadius}
           spreadRadius={spreadRadius}
           colour={colour}
+          onClipboardClick={handleClipboardClick}
         />
       </div>
       <Footer />
