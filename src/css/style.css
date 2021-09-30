@@ -79,6 +79,10 @@ form p {
   margin-left: 0.25rem;
 }
 
+#shadow-colour {
+  border: none;
+}
+
 /****************************************
 Rectangle
 ****************************************/
@@ -112,16 +116,6 @@ code {
   transform: rotate(5deg);
 }
 
-.clipboard-img:hover {
-  transform: scale(1.4) rotate(5deg);
-  transition: transform 0.25s ease-in-out;
-}
-
-.clipboard-img:active {
-  transform: scale(2) rotate(5deg);
-  transition: transform 0.05s ease-in-out;
-}
-
 /****************************************
 Footer
 ****************************************/
@@ -136,10 +130,22 @@ footer p {
 Media queries
 ****************************************/
 
+@media (hover: hover) {
+  .clipboard-img:hover {
+    transform: scale(1.4) rotate(5deg);
+    transition: transform 0.25s ease-in-out;
+  }
+  .clipboard-img:active {
+    transform: scale(2) rotate(5deg);
+    transition: transform 0.05s ease-in-out;
+  }
+}
+
 @media screen and (min-width: 580px) {
   h1 {
     font-size: 3em;
   }
+
   code {
     font-size: 1em;
   }
