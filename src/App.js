@@ -33,7 +33,19 @@ export default function App() {
   };
 
   function handleClipboardClick() {
-    console.log('Copied!');
+    navigator.clipboard
+      // prettier-ignore
+      .writeText(
+        `box-shadow: ${
+          shadowType === 'inset' ? 'inset ' : ''
+        }${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colour};`
+      )
+      .then(() => {
+        console.log('Copied!');
+      })
+      .catch(err => {
+        console.log('Something went wrong', err);
+      });
   }
 
   return (

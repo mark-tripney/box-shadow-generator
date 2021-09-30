@@ -113,8 +113,13 @@ code {
 }
 
 .clipboard-img:hover {
-  transform: scale(1.2) rotate(5deg);
+  transform: scale(1.4) rotate(5deg);
   transition: transform 0.25s ease-in-out;
+}
+
+.clipboard-img:active {
+  transform: scale(2) rotate(5deg);
+  transition: transform 0.05s ease-in-out;
 }
 
 /****************************************
