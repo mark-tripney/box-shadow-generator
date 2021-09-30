@@ -6,7 +6,7 @@ import CSSCode from './CSSCode';
 import '@fontsource/work-sans/700.css';
 import '@fontsource/bitter/400.css';
 import '@fontsource/roboto-mono/400.css';
-import './style.css';
+import './css/style.css';
 
 const initialState = {
   offsetX: 0,
